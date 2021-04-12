@@ -12,7 +12,7 @@ You can install the released version of frc from GitHub with:
 
 ``` r
 library(devtools)
-devtools::install_github("SticsRPacks/sandbox")
+devtools::install_github("JSB-UCLA/frc")
 ```
 
 ## Example
