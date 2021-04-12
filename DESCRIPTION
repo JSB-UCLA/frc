@@ -1,0 +1,19 @@
+Package: frc
+Type: Package
+Title: model-free prediction-based feature ranking for classification
+Version: 0.1
+Date: 2021-04-11
+Author: Jingyi Jessica Li
+Maintainer: Jingyi Jessica Li <lijy03@g.ucla.edu>
+Description: This package provides functions to calculate the sample-level classical criterion and the sample-level Neyman-Pearson criterion as described in "A flexible model-free prediction-based framework for feature ranking" by Li, Chen, and Tong (https://arxiv.org/abs/1903.05262).
+License: CC BY-NC 4.0
+LazyData: TRUE
+Imports:
+	ks (>= 1.11.6)
+RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
+Suggests: 
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr

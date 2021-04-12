@@ -1,0 +1,39 @@
+---
+title: "Introduction"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+This package provides functions to calculate the sample-level classical criterion (s-CC) and the sample-level Neyman-Pearson criterion (s-NPC) as described in "A flexible model-free prediction-based framework for feature ranking" by Li, Chen, and Tong (https://arxiv.org/abs/1903.05262).
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(frc)
+data(X, y)
+```
+
+```{r s-CC calculation}
+# calculate s-CC for the first feature
+sCC(X[,1], y)
+# calculate s-CC for all features
+apply(X, 2, FUN=function(x) sCC(x, y))
+```
+
+```{r s-NPC calculation}
+# calculate s-NPC (default: alpha = 0.3, delta = 0.05) for the first feature
+sNPC(X[,1], y)
+# calculate s-NPC (alpha = 0.05) for the first feature
+sNPC(X[,1], y, alpha=0.05)
+# calculate s-NPC, with class 1 as the more important class, for the first feature
+sNPC(X[,1], y, imp_class=1)
+# calculate s-NPC (default: alpha = 0.3, delta = 0.05) for all features
+apply(X, 2, FUN=function(x) sNPC(x, y))
+```
